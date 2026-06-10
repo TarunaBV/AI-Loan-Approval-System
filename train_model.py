@@ -25,7 +25,11 @@ df.drop("Loan_ID", axis=1, inplace=True)
 encoders = {}
 
 for column in df.columns:
-   if not pd.api.types.is_numeric_dtype(df[column]):
+
+    if column == "Loan_Status":
+        continue
+
+    if not pd.api.types.is_numeric_dtype(df[column]):
         le = LabelEncoder()
         df[column] = le.fit_transform(df[column])
         encoders[column] = le
