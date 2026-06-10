@@ -7,6 +7,9 @@ model = joblib.load('model/loan_model.pkl')
 
 encoders = joblib.load('model/encoders.pkl')
 
+print("Model Features:")
+print(model.feature_names_in_)
+
 @app.route('/')
 def home():
     return render_template('index.html')
