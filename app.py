@@ -53,9 +53,9 @@ def predict():
     prediction_text = "Approved" if prediction == 1 else "Rejected"
 
     result = (
-        "✅ Loan Approved"
+        "✅ Loan Approved!"
         if prediction == 1
-        else "❌ Loan Rejected"
+        else "❌ Loan Rejected!"
     )
     
     query = """
